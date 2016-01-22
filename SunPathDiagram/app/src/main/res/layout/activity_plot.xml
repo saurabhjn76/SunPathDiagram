@@ -1,0 +1,18 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PlotActivity">
+    <com.androidplot.xy.XYPlot
+        android:id="@+id/plot"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        label="A Simple XY Plot"
+        rangeLabel="range"
+        domainLabel="domain"
+        borderColor="#000000"
+        backgroundColor="#000000"
+        graphBackgroundColor="#000000"
+        gridBackgroundColor="#111111"
+        labelTextSize="20sp"
+        />
+</RelativeLayout>
