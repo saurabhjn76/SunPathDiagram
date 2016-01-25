@@ -6,7 +6,8 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingTop="25dp"
+    android:id="@+id/inputlayout"
     tools:context="iiitvstudents.com.sunpathdiagram.InputActivity">
 
     <TextView
@@ -15,9 +16,12 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Enter Latitude"
         android:id="@+id/textView"
-        android:layout_alignParentTop="true"
+        android:layout_below="@+id/textView3"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:textSize="20sp"
+
+        android:layout_marginTop="20dp"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -25,10 +29,11 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Enter Day Number"
         android:id="@+id/textView2"
-        android:layout_below="@+id/textView"
+        android:layout_below="@+id/latitude"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="50dp" />
+        android:textSize="20sp"
+        android:layout_marginTop="20dp"/>
 
     <EditText
         android:layout_width="wrap_content"
@@ -37,8 +42,11 @@
         android:layout_below="@+id/textView"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/textView"
-        android:layout_alignEnd="@+id/textView" />
+        android:layout_alignRight="@+id/button"
+        android:layout_alignEnd="@+id/button"
+        android:singleLine="true"
+        android:inputType="number|numberSigned|numberDecimal"
+        android:hint="in Degrees" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -48,13 +56,51 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignRight="@+id/latitude"
-        android:layout_alignEnd="@+id/latitude" />
+        android:layout_alignEnd="@+id/latitude"
+        android:singleLine="true"
+        android:inputType="number"
+        android:hint="between 1-365" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Calculate"
+        android:text="Plot"
         android:id="@+id/button"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_below="@+id/daynumber"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="43dp"
+        android:background="#ff9800"
+        android:textColor="#ffffff"
+        android:textSize="18sp" />
+
+    <ImageView
+        android:layout_width="35sp"
+        android:layout_height="35sp"
+        android:id="@+id/imageView"
+        android:src="@drawable/calendaricon"
+        android:onClick="datepick"
+        android:layout_below="@+id/textView2"
+        android:layout_toRightOf="@+id/latitude"
+        android:layout_alignBottom="@+id/daynumber" />
+
+    <ImageView
+        android:layout_width="35sp"
+        android:layout_height="45sp"
+        android:id="@+id/locationButton"
+        android:src="@drawable/ic_location_on_black_48dp"
+        android:layout_toRightOf="@+id/latitude"
+        android:layout_alignBottom="@+id/latitude" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Enter values to plot sun path diagram"
+        android:id="@+id/textView3"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textSize="22sp"/>
+    />
+
 </RelativeLayout>
